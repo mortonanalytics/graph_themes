@@ -27,7 +27,7 @@ ggplot(df2, aes( x = year, y = count)) +
             x = max.est.year$year + 2, 
             y = max.est.count$count + (.2 * max.est.count$count), 
             label = format(max.est.count$count, big.mark = ","),
-            colour = "blue", 
+            colour = "#82ac82", 
             fontface = 2,
             size = 6) +
   theme(
