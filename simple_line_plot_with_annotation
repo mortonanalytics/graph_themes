@@ -36,8 +36,9 @@ ggplot(df2, aes( x = year, y = count)) +
     axis.text = element_text(color = "darkgrey", size = 10),
     axis.ticks = element_line(color = "darkgrey"),
     plot.background = element_blank(),
-    panel.background = element_blank(),
-    panel.grid.major = element_blank(),
+    panel.background = element_blank(), 
+    ##plot.background = element_rect(fill = "#f2f2f2"), ##optional backgroup
+    panel.grid.minor = element_blank(),
     legend.title = element_blank(),
     legend.position = "top"
   )
