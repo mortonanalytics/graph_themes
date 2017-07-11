@@ -15,19 +15,26 @@ library(dygraphs)
      
     p <- dygraph(df2) %>%
        dySeries("datasets::lynx", 
-                label = "Actual",
-                strokeWidth = 2) %>%
-       dySeries( "f.cast$mean", 
-                label = "Predicted", 
-                strokePattern = "dashed") %>%
-       dyAxis("x", axisLineColor = "white", 
-              axisLabelColor = "gray", 
-              gridLineColor = "lightgray") %>%
-       dyAxis("y", axisLineColor = "white", 
-              axisLabelColor = "gray", 
-              gridLineColor = "lightgray") %>%
-       dyLegend(show = "follow") %>%
-       dyCrosshair(direction = "vertical") %>%
-       dyEvent("1934-01-01", "1934", labelLoc = "bottom") %>%
-       dyOptions(colors = sgPalette1)
+           label = "Actual",
+           strokeWidth = 2) %>%
+  
+        dySeries(c("f.cast$lower.80%", "f.cast$mean", "f.cast$upper.80%"), 
+           label = "Predicted", 
+           strokePattern = "dashed") %>%
+  
+        dyAxis("x", axisLineColor = "white", 
+         axisLabelColor = "gray", 
+         gridLineColor = "lightgray") %>%
+  
+        dyAxis("y", axisLineColor = "white", 
+         axisLabelColor = "gray", 
+         gridLineColor = "lightgray") %>%
+  
+        dyLegend(show = "follow", hideOnMouseOut = FALSE, labelsSeparateLines = TRUE, width = 100) %>%
+  
+        dyCrosshair(direction = "vertical") %>%
+  
+        dyEvent("1935-01-01", "1935", labelLoc = "bottom") %>%
+  
+        dyOptions(colors = sgPalette1,stepPlot = TRUE)
     p
