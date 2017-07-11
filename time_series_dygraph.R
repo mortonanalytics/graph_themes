@@ -1,6 +1,7 @@
 library(dygraphs)
      #env <<- environment()  # can use globalenv(), parent.frame(), etc
-     
+     sgPalette1 <- c("#1E90FF","#DC143C", "#336292", "#5D6063", "#070A41")
+
      df <- data_frame(year = 1821:1934, count = as.numeric(datasets::lynx), group = "estimate")
      df <- df %>% filter(year >= 1900)
      df.f <- data_frame(year = 1935:1944, count = summary(forecast(ts(df$count)))$`Point Forecast`, group = "prediction")
