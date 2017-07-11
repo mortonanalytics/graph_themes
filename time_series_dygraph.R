@@ -1,6 +1,6 @@
 library(dygraphs)
      #env <<- environment()  # can use globalenv(), parent.frame(), etc
-     sgPalette1 <- c("#1E90FF","#DC143C", "#336292", "#5D6063", "#070A41")
+     sgPalette1 <- c("#cae4db", "#dcae1d", "#00303f", "#7a9d96")
 
      df <- data_frame(year = 1821:1934, count = as.numeric(datasets::lynx), group = "estimate")
      df <- df %>% filter(year >= 1900)
